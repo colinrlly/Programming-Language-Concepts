@@ -1,0 +1,20 @@
+(define pow (x p)
+    (if (= p 0)
+        1
+        (* x (pow x (- p 1)))
+    )
+)
+
+(pow 2 3 )
+
+(define sumPow (p n)
+    (if (= n -1)
+        0
+        (
+            + 
+            (pow n p) 
+            (sumPow p (- n 1)))
+    )
+)
+
+(sumPow 2 2)
