@@ -195,9 +195,27 @@
 
 ;; E.a (Exercise 10a)
 ;; DEFINE takewhile HERE
+(define takewhile (p? xs)
+  (if (null? xs)
+    '()
+    (if (p? (car xs))
+      (cons (car xs) (takewhile p? (cdr xs)))
+      '()
+    )
+  )
+)
 
 ;; E.b (Exercise 10b)
 ;; DEFINE dropwhile HERE
+(define dropwhile (p? xs)
+  (if (null? xs)
+    xs
+    (if (p? (car xs))
+      (dropwhile p? (cdr xs))
+      xs
+    )
+  )
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -207,6 +225,20 @@
 ;; Part F (arg-max)
 
 ;; DEFINE arg-max HERE
+(define arg-max-app (f x y)
+  (if (< (f x) (f y))
+    y
+    x
+  )
+)
+(define arg-max (f xs)
+  (if (null? xs)
+    0
+    (arg-max-app f (car xs) (arg-max f (cdr xs)))
+  )
+
+  ;; (max (f (car xs)) (arg-max f (cdr xs)))
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -267,18 +299,41 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 ;; Part I
 
 ;; DEFINE clamp HERE
+(define clamp (f low high)
+  (lambda (x)
+    ((lambda (n low high)
+      (if (< n low)
+        low
+        (if (> n high)
+          high
+          n
+        )
+      )
+    ) (f x) low high)
+  )
+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 
 ;; Part J
 
-;; DEFINE balanced?eck-expect (count 'a '()) 0)
+;; DEFINE balanced? HERE
+(define balanced? (f xs)
+  (if (null? xs)
+    #t
+    (if (odd? (length xs))
+      #f
+      (if (f (car xs) (cadr xs))
+        (balanced? f (cddr xs))
+        #f
+      )
+    )
+  )
+)
 
 (check-expect (count 'a '(a)) 1)
 (check-expect (count 'a '(b)) 0)
