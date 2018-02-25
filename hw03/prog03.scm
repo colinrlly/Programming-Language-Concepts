@@ -196,25 +196,25 @@
 ;; E.a (Exercise 10a)
 ;; DEFINE takewhile HERE
 (define takewhile (p? xs)
-  (if (null? xs)
-    '()
-    (if (p? (car xs))
-      (cons (car xs) (takewhile p? (cdr xs)))
-      '()
+    (if (null? xs)
+        xs
+        (if (p? (car xs))
+            (cons (car xs) (takewhile p? (cdr xs)))
+            '()
+        )
     )
-  )
 )
 
 ;; E.b (Exercise 10b)
 ;; DEFINE dropwhile HERE
 (define dropwhile (p? xs)
-  (if (null? xs)
-    xs
-    (if (p? (car xs))
-      (dropwhile p? (cdr xs))
-      xs
+    (if (null? xs)
+        xs
+        (if (p? (car xs))
+            (dropwhile p? (cdr xs))
+            xs
+        )
     )
-  )
 )
 
 
@@ -226,18 +226,17 @@
 
 ;; DEFINE arg-max HERE
 (define arg-max-app (f x y)
-  (if (< (f x) (f y))
-    y
-    x
-  )
+    (if (< (f x) (f y))
+        y
+        x
+    )
 )
-(define arg-max (f xs)
-  (if (null? xs)
-    0
-    (arg-max-app f (car xs) (arg-max f (cdr xs)))
-  )
 
-  ;; (max (f (car xs)) (arg-max f (cdr xs)))
+(define arg-max (f xs)
+    (if (null? xs)
+        0
+        (arg-max-app f (car xs) (arg-max f (cdr xs)))
+    )
 )
 
 
@@ -303,17 +302,17 @@
 
 ;; DEFINE clamp HERE
 (define clamp (f low high)
-  (lambda (x)
-    ((lambda (n low high)
-      (if (< n low)
-        low
-        (if (> n high)
-          high
-          n
-        )
-      )
-    ) (f x) low high)
-  )
+    (lambda (x)
+        ((lambda (n low high)
+            (if (< n low)
+                low
+                (if (> n high)
+                    high
+                    n
+                )
+            )
+        ) (f x) low high)
+    )
 )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -323,189 +322,14 @@
 
 ;; DEFINE balanced? HERE
 (define balanced? (f xs)
-  (if (null? xs)
-    #t
-    (if (odd? (length xs))
-      #f
-      (if (f (car xs) (cadr xs))
-        (balanced? f (cddr xs))
-        #f
-      )
+    (if (null? xs)
+        #t
+        (if (odd? (length xs))
+            #f
+            (if (f (car xs) (cadr xs))
+                (balanced? f (cddr xs))
+                #f
+            )
+        )
     )
-  )
 )
-
-(check-expect (count 'a '(a)) 1)
-(check-expect (count 'a '(b)) 0)
-(check-expect (count 'a '(a a)) 2)
-(check-expect (count 'a '(a b)) 1)
-(check-expect (count 'a '(b a)) 1)
-(check-expect (count 'a '(b b)) 0)
-(check-expect (count 'a '(a (a))) 1)
-(check-expect (count 'a '(a (b))) 1)
-(check-expect (count 'a '(b (a))) 0)
-(check-expect (count 'a '(b (b))) 0)
-(check-expect (count 'a '((a) (a))) 0)
-(check-expect (count 'a '((a) (b))) 0)
-(check-expect (count 'a '((b) (a))) 0)
-(check-expect (count 'a '((b) (b))) 0)
-(check-expect (count 'a '((a a))) 0)
-(check-expect (count 'a '((a b))) 0)
-(check-expect (count 'a '((b a))) 0)
-(check-expect (count 'a '((b b))) 0)
-(check-expect (count 'a '(1 b a (c a))) 1)
-(check-expect (count 'a '(0 (-1) -1 (-1) ((((5) #f 2 (1 -5 0)) (0) 1 -5) 5 () ((-2 e 1 #f a 1) ()) #t) -1 ((#t ((#t b -5 b 0 (2 d a)) (1 (d) 1) 0) (() (c) b 0)) () -2 -2) #t)) 0)
-(check-expect (count 'a '(-1 c a -2 a (b 0 -2 1 0) d #t)) 2)
-(check-expect (count 'a '(0 (#t b (0 #t)) -1 () (a (((0) e e e 1 a) d -2 -2 (-2 () e) ()) (d)))) 0)
-(check-expect (count 'a '(-1 5 b d 2 (b d) 1 2 ((((-5) #f 2 -1) c)))) 0)
-(check-expect (count 'a '((0 -2) (b () (b -1 -5 -1 (1 a #t)) 5 #t c) #f ((-2 2 1) b 5 a) 1 a -2 e d 1 b)) 1)
-(check-expect (count 'a '(-5 -5 0 -2 -2 1 c -5 c () d)) 0)
-(check-expect (count 'a '(((0 e 1 (0 d (1 0 -2 (a (b 5))) ((1 #f #f) #f () #t -5 -5) (-5 c c #f b)) c) b d #t) ((#t 5 (d -2 2 5)) (a e (((5)) -2 e 5)) a) e 1 -5 (d))) 0)
-(check-expect (count 'a '(1 b 0)) 0)
-(check-expect (count 'a '(() -2 a -2 (0 ()) e)) 1)
-
-;; test-Ab-countall.scm
-(check-expect (countall 'a '()) 0)
-(check-expect (countall 'a '(a)) 1)
-(check-expect (countall 'a '(b)) 0)
-(check-expect (countall 'a '(a a)) 2)
-(check-expect (countall 'a '(a b)) 1)
-(check-expect (countall 'a '(b a)) 1)
-(check-expect (countall 'a '(b b)) 0)
-(check-expect (countall 'a '(a (a))) 2)
-(check-expect (countall 'a '(a (b))) 1)
-(check-expect (countall 'a '(b (a))) 1)
-(check-expect (countall 'a '(b (b))) 0)
-(check-expect (countall 'a '((a) (a))) 2)
-(check-expect (countall 'a '((a) (b))) 1)
-(check-expect (countall 'a '((b) (a))) 1)
-(check-expect (countall 'a '((b) (b))) 0)
-(check-expect (countall 'a '((a a))) 2)
-(check-expect (countall 'a '((a b))) 1)
-(check-expect (countall 'a '((b a))) 1)
-(check-expect (countall 'a '((b b))) 0)
-(check-expect (countall 'a '(1 b a (c a))) 2)
-(check-expect (countall 'a '(0 (-1) -1 (-1) ((((5) #f 2 (1 -5 0)) (0) 1 -5) 5 () ((-2 e 1 #f a 1) ()) #t) -1 ((#t ((#t b -5 b 0 (2 d a)) (1 (d) 1) 0) (() (c) b 0)) () -2 -2) #t)) 2)
-(check-expect (countall 'a '(-1 c a -2 a (b 0 -2 1 0) d #t)) 2)
-(check-expect (countall 'a '(0 (#t b (0 #t)) -1 () (a (((0) e e e 1 a) d -2 -2 (-2 () e) ()) (d)))) 2)
-(check-expect (countall 'a '(-1 5 b d 2 (b d) 1 2 ((((-5) #f 2 -1) c)))) 0)
-(check-expect (countall 'a '((0 -2) (b () (b -1 -5 -1 (1 a #t)) 5 #t c) #f ((-2 2 1) b 5 a) 1 a -2 e d 1 b)) 3)
-(check-expect (countall 'a '(-5 -5 0 -2 -2 1 c -5 c () d)) 0)
-(check-expect (countall 'a '(((0 e 1 (0 d (1 0 -2 (a (b 5))) ((1 #f #f) #f () #t -5 -5) (-5 c c #f b)) c) b d #t) ((#t 5 (d -2 2 5)) (a e (((5)) -2 e 5)) a) e 1 -5 (d))) 3)
-(check-expect (countall 'a '(1 b 0)) 0)
-(check-expect (countall 'a '(() -2 a -2 (0 ()) e)) 1)
-
-;; test-Ac-mirror.scm
-(check-expect (mirror '()) '())
-(check-expect (mirror '(())) '(()))
-(check-expect (mirror '(() () (() ()))) '((() ()) () ()))
-(check-expect (mirror '(1 2 3 4 5)) '(5 4 3 2 1))
-(check-expect (mirror '((a (b 5)) (c d) e)) '(e (d c) ((5 b) a)))
-(check-expect (mirror '(0 (-1) -1 (-1) ((((5) #f 2 (1 -5 0)) (0) 1 -5) 5 () ((-2 e 1 #f a 1) ()) #t) -1 ((#t ((#t b -5 b 0 (2 d a)) (1 (d) 1) 0) (() (c) b 0)) () -2 -2) #t)) '(#t (-2 -2 () ((0 b (c) ()) (0 (1 (d) 1) ((a d 2) 0 b -5 b #t)) #t)) -1 (#t (() (1 a #f 1 e -2)) () 5 (-5 1 (0) ((0 -5 1) 2 #f (5)))) (-1) -1 (-1) 0))
-(check-expect (mirror '(-1 c a -2 a (b 0 -2 1 0) d #t)) '(#t d (0 1 -2 0 b) a -2 a c -1))
-(check-expect (mirror '(0 (#t b (0 #t)) -1 () (a (((0) e e e 1 a) d -2 -2 (-2 () e) ()) (d)))) '(((d) (() (e () -2) -2 -2 d (a 1 e e e (0))) a) () -1 ((#t 0) b #t) 0))
-(check-expect (mirror '(-1 5 b d 2 (b d) 1 2 ((((-5) #f 2 -1) c)))) '(((c (-1 2 #f (-5)))) 2 1 (d b) 2 d b 5 -1))
-(check-expect (mirror '((0 -2) (b () (b -1 -5 -1 (1 a #t)) 5 #t c) #f ((-2 2 1) b 5 a) 1 a -2 e d 1 b)) '(b 1 d e -2 a 1 (a 5 b (1 2 -2)) #f (c #t 5 ((#t a 1) -1 -5 -1 b) () b) (-2 0)))
-(check-expect (mirror '(-5 -5 0 -2 -2 1 c -5 c () d)) '(d () c -5 c 1 -2 -2 0 -5 -5))
-(check-expect (mirror '(((0 e 1 (0 d (1 0 -2 (a (b 5))) ((1 #f #f) #f () #t -5 -5) (-5 c c #f b)) c) b d #t) ((#t 5 (d -2 2 5)) (a e (((5)) -2 e 5)) a) e 1 -5 (d))) '((d) -5 1 e (a ((5 e -2 ((5))) e a) ((5 2 -2 d) 5 #t)) (#t d b (c ((b #f c c -5) (-5 -5 #t () #f (#f #f 1)) (((5 b) a) -2 0 1) d 0) 1 e 0))))
-(check-expect (mirror '(1 b 0)) '(0 b 1))
-
-;; test-Ad-flatten.scm
-(check-expect (flatten '()) '())
-(check-expect (flatten '(())) '())
-(check-expect (flatten '(() () (() ()))) '())
-(check-expect (flatten '((I Ching) (U Thant) (E Coli))) '(I Ching U Thant E Coli))
-(check-expect (flatten '((a b) ((c d) e))) '(a b c d e))
-(check-expect (flatten '(0 (-1) -1 (-1) ((((5) #f 2 (1 -5 0)) (0) 1 -5) 5 () ((-2 e 1 #f a 1) ()) #t) -1 ((#t ((#t b -5 b 0 (2 d a)) (1 (d) 1) 0) (() (c) b 0)) () -2 -2) #t)) '(0 -1 -1 -1 5 #f 2 1 -5 0 0 1 -5 5 -2 e 1 #f a 1 #t -1 #t #t b -5 b 0 2 d a 1 d 1 0 c b 0 -2 -2 #t))
-(check-expect (flatten '(-1 c a -2 a (b 0 -2 1 0) d #t)) '(-1 c a -2 a b 0 -2 1 0 d #t))
-(check-expect (flatten '(0 (#t b (0 #t)) -1 () (a (((0) e e e 1 a) d -2 -2 (-2 () e) ()) (d)))) '(0 #t b 0 #t -1 a 0 e e e 1 a d -2 -2 -2 e d))
-(check-expect (flatten '(-1 5 b d 2 (b d) 1 2 ((((-5) #f 2 -1) c)))) '(-1 5 b d 2 b d 1 2 -5 #f 2 -1 c))
-(check-expect (flatten '((0 -2) (b () (b -1 -5 -1 (1 a #t)) 5 #t c) #f ((-2 2 1) b 5 a) 1 a -2 e d 1 b)) '(0 -2 b b -1 -5 -1 1 a #t 5 #t c #f -2 2 1 b 5 a 1 a -2 e d 1 b))
-(check-expect (flatten '(-5 -5 0 -2 -2 1 c -5 c () d)) '(-5 -5 0 -2 -2 1 c -5 c d))
-(check-expect (flatten '(((0 e 1 (0 d (1 0 -2 (a (b 5))) ((1 #f #f) #f () #t -5 -5) (-5 c c #f b)) c) b d #t) ((#t 5 (d -2 2 5)) (a e (((5)) -2 e 5)) a) e 1 -5 (d))) '(0 e 1 0 d 1 0 -2 a b 5 1 #f #f #f #t -5 -5 -5 c c #f b c b d #t #t 5 d -2 2 5 a e 5 -2 e 5 a e 1 -5 d))
-(check-expect (flatten '(1 b 0)) '(1 b 0))
-(check-expect (flatten '(() -2 a -2 (0 ()) e)) '(-2 a -2 0 e))
-
-;; test-C-interleave.scm
-(check-expect (interleave '(a b c) '(d e f)) '(a d b e c f))
-(check-expect (interleave '(a b c d) '(e f)) '(a e b f c d))
-(check-expect (interleave '(a b) '(c d e f)) '(a c b d e f))
-(check-expect (interleave '() '()) '())
-(check-expect (interleave '(a b) '()) '(a b))
-(check-expect (interleave '() '(d e)) '(d e))
-(check-expect (interleave '(1 2 3 4 5) '(a b c d e)) '(1 a 2 b 3 c 4 d 5 e))
-
-;; test-Ae-sublist?.scm
-(check-expect (sublist? '() '()) #t)
-(check-expect (sublist? '() '(a b c)) #t)
-(check-expect (sublist? '(a) '()) #f)
-(check-expect (sublist? '(a) '(a b c)) #t)
-(check-expect (sublist? '(a) '(1 2 a b c 5 6)) #t)
-(check-expect (sublist? '(a) '(1 2 a 3 b 4 c 5 6)) #t)
-(check-expect (sublist? '(a b c) '()) #f)
-(check-expect (sublist? '(a b c) '(a b c)) #t)
-(check-expect (sublist? '(a b c) '(c b a)) #f)
-(check-expect (sublist? '(a b c) '(1 2 a b c 5 6)) #t)
-(check-expect (sublist? '(a b c) '(6 5 c b a 2 1)) #f)
-(check-expect (sublist? '(a b c) '(1 2 a 3 b 4 c 5 6)) #f)
-(check-expect (sublist? '(a b c) '(6 5 c 4 b 3 a 2 1)) #f)
-(check-expect (sublist? '(a y b z c) '()) #f)
-(check-expect (sublist? '(a y b z c) '(a b c)) #f)
-(check-expect (sublist? '(a y b z c) '(c b a)) #f)
-(check-expect (sublist? '(a y b z c) '(1 2 a b c 5 6)) #f)
-(check-expect (sublist? '(a y b z c) '(6 5 c b a 2 1)) #f)
-(check-expect (sublist? '(a y b z c) '(1 2 a 3 b 4 c 5 6)) #f)
-(check-expect (sublist? '(a y b z c) '(6 5 c 4 b 3 a 2 1)) #f)
-(check-expect (sublist? '(a b c) '(a a b a b c)) #t)
-(check-expect (sublist? '(a a a) '(a a b a b c)) #f)
-(check-expect (sublist? '(1 2 3) '(a b 1 1 2 3 c d)) #t)
-(check-expect (sublist? '(a b c) '(a b x b c)) #f)
-
-;; test-Af-subseq?.scm
-(check-expect (subseq? '() '()) #t)
-(check-expect (subseq? '() '(a b c)) #t)
-(check-expect (subseq? '(a) '()) #f)
-(check-expect (subseq? '(a) '(a b c)) #t)
-(check-expect (subseq? '(a) '(1 2 a b c 5 6)) #t)
-(check-expect (subseq? '(a) '(1 2 a 3 b 4 c 5 6)) #t)
-(check-expect (subseq? '(a b c) '()) #f)
-(check-expect (subseq? '(a b c) '(a b c)) #t)
-(check-expect (subseq? '(a b c) '(c b a)) #f)
-(check-expect (subseq? '(a b c) '(1 2 a b c 5 6)) #t)
-(check-expect (subseq? '(a b c) '(6 5 c b a 2 1)) #f)
-(check-expect (subseq? '(a b c) '(1 2 a 3 b 4 c 5 6)) #t)
-(check-expect (subseq? '(a b c) '(6 5 c 4 b 3 a 2 1)) #f)
-(check-expect (subseq? '(a y b z c) '()) #f)
-(check-expect (subseq? '(a y b z c) '(a b c)) #f)
-(check-expect (subseq? '(a y b z c) '(c b a)) #f)
-(check-expect (subseq? '(a y b z c) '(1 2 a b c 5 6)) #f)
-(check-expect (subseq? '(a y b z c) '(6 5 c b a 2 1)) #f)
-(check-expect (subseq? '(a y b z c) '(1 2 a 3 b 4 c 5 6)) #f)
-(check-expect (subseq? '(a y b z c) '(6 5 c 4 b 3 a 2 1)) #f)
-(check-expect (subseq? '(a b c) '(a a b a b c)) #t)
-(check-expect (subseq? '(a a a) '(a a b a b c)) #t)
-(check-expect (subseq? '(a b c) '(a b x b c)) #t)
-
-;; test-B1-take.scm
-(check-expect (take 0 '()) '())
-(check-expect (take 5 '()) '())
-(check-expect (take 0 '(a b c d e)) '())
-(check-expect (take 1 '(a b c d e)) '(a))
-(check-expect (take 2 '(a b c d e)) '(a b))
-(check-expect (take 3 '(a b c d e)) '(a b c))
-(check-expect (take 4 '(a b c d e)) '(a b c d))
-(check-expect (take 5 '(a b c d e)) '(a b c d e))
-(check-expect (take 6 '(a b c d e)) '(a b c d e))
-(check-expect (take 7 '(a b c d e)) '(a b c d e))
-
-;; test-B2-drop.scm
-(check-expect (drop 0 '()) '())
-(check-expect (drop 5 '()) '())
-(check-expect (drop 0 '(a b c d e)) '(a b c d e))
-(check-expect (drop 1 '(a b c d e)) '(b c d e))
-(check-expect (drop 2 '(a b c d e)) '(c d e))
-(check-expect (drop 3 '(a b c d e)) '(d e))
-(check-expect (drop 4 '(a b c d e)) '(e))
-(check-expect (drop 5 '(a b c d e)) '())
-(check-expect (drop 6 '(a b c d e)) '())
-(check-expect (drop 7 '(a b c d e)) '())
