@@ -1,5 +1,5 @@
 (* 
- * Name: 
+ * Name: Colin Reilly
  * Time spent on assignment: 
  * Collaborators: 
  *)
