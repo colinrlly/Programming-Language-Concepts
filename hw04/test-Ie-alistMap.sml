@@ -1,0 +1,25 @@
+val _ : ('a -> 'b) -> 'a alist -> 'b alist = alistMap
+
+fun run_alistMap_test elemEq test = run_test (uncurry2 alistMap) (alistEq elemEq) test
+
+val _ = run_alistMap_test intEq ("alistMap_test01", (fn x => x + 1, alistEx1), Nil)
+val _ = run_alistMap_test intEq ("alistMap_test02", (fn x => x + 1, alistEx2), NonNil (Sing (43)))
+val _ = run_alistMap_test intEq ("alistMap_test03", (fn x => x + 1, alistEx3), NonNil (Append (Sing (24), Sing (25))))
+val _ = run_alistMap_test intEq ("alistMap_test04", (fn x => x + 1, alistEx4), NonNil (Append (Append (Sing (18), Sing (19)), Sing (20))))
+val _ = run_alistMap_test intEq ("alistMap_test05", (fn x => x + 1, alistEx5), NonNil (Append (Sing (40), Append (Sing (39), Sing (38)))))
+val _ = run_alistMap_test intEq ("alistMap_test06", (fn x => x + 1, alistEx6), NonNil (Append (Append (Append (Sing (28), Sing (29)), Sing (30)), Append (Sing (80), Append (Sing (79), Sing (78))))))
+val _ = run_alistMap_test intEq ("alistMap_test07", (fn x => x + 1, alistEx7), NonNil (Append (Append (Sing (51), Sing (52)), Append (Sing (62), Sing (61)))))
+val _ = run_alistMap_test boolEq ("alistMap_test08", (fn x => x mod 2 = 1, alistEx1), Nil)
+val _ = run_alistMap_test boolEq ("alistMap_test09", (fn x => x mod 2 = 1, alistEx2), NonNil (Sing (false)))
+val _ = run_alistMap_test boolEq ("alistMap_test10", (fn x => x mod 2 = 1, alistEx3), NonNil (Append (Sing (true), Sing (false))))
+val _ = run_alistMap_test boolEq ("alistMap_test11", (fn x => x mod 2 = 1, alistEx4), NonNil (Append (Append (Sing (true), Sing (false)), Sing (true))))
+val _ = run_alistMap_test boolEq ("alistMap_test12", (fn x => x mod 2 = 1, alistEx5), NonNil (Append (Sing (true), Append (Sing (false), Sing (true)))))
+val _ = run_alistMap_test boolEq ("alistMap_test13", (fn x => x mod 2 = 1, alistEx6), NonNil (Append (Append (Append (Sing (true), Sing (false)), Sing (true)), Append (Sing (true), Append (Sing (false), Sing (true))))))
+val _ = run_alistMap_test boolEq ("alistMap_test14", (fn x => x mod 2 = 1, alistEx7), NonNil (Append (Append (Sing (false), Sing (true)), Append (Sing (true), Sing (false)))))
+val _ = run_alistMap_test stringEq ("alistMap_test15", (fn x => Int.toString x, alistEx1), Nil)
+val _ = run_alistMap_test stringEq ("alistMap_test16", (fn x => Int.toString x, alistEx2), NonNil (Sing ("42")))
+val _ = run_alistMap_test stringEq ("alistMap_test17", (fn x => Int.toString x, alistEx3), NonNil (Append (Sing ("23"), Sing ("24"))))
+val _ = run_alistMap_test stringEq ("alistMap_test18", (fn x => Int.toString x, alistEx4), NonNil (Append (Append (Sing ("17"), Sing ("18")), Sing ("19"))))
+val _ = run_alistMap_test stringEq ("alistMap_test19", (fn x => Int.toString x, alistEx5), NonNil (Append (Sing ("39"), Append (Sing ("38"), Sing ("37")))))
+val _ = run_alistMap_test stringEq ("alistMap_test20", (fn x => Int.toString x, alistEx6), NonNil (Append (Append (Append (Sing ("27"), Sing ("28")), Sing ("29")), Append (Sing ("79"), Append (Sing ("78"), Sing ("77"))))))
+val _ = run_alistMap_test stringEq ("alistMap_test21", (fn x => Int.toString x, alistEx7), NonNil (Append (Append (Sing ("50"), Sing ("51")), Append (Sing ("61"), Sing ("60")))))

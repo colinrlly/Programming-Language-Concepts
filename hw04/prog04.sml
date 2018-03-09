@@ -39,11 +39,13 @@ fun unzip l =
               val (l1, l2) = unzip t1
             in 
               (a::l1, b::l2) 
-            end
+            end;
 
 (* A.b *)
 (* DEFINE zip HERE *)
-
+fun zip ([],[]) = []
+  | zip ((x::xs),(y::ys)) = (x,y)::zip(xs,ys)
+  | zip (_,_) = []
 
 (* **************************************** *)
 (* **************************************** *)
@@ -52,7 +54,10 @@ fun unzip l =
 (* Part B *)
 
 (* DEFINE compound HERE *)
+fun compound x f 0 = x
+    | compound x f n = compound (f x) f (n-1);
 
+val ans = compound(0, (fn x => x + 1), 10);
 
 (* **************************************** *)
 (* **************************************** *)

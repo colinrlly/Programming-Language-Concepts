@@ -1,0 +1,25 @@
+val _ : ('a * 'b -> 'b) -> 'b -> 'a alist -> 'b = alistFoldl
+
+fun run_alistFoldl_test check test = run_test (uncurry3 alistFoldl) check test
+
+val _ = run_alistFoldl_test intEq ("alistFoldl_test01", (fn (x, b) => x + b, 0, alistEx1), 0)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test02", (fn (x, b) => x + b, 0, alistEx2), 42)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test03", (fn (x, b) => x + b, 0, alistEx3), 47)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test04", (fn (x, b) => x + b, 0, alistEx4), 54)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test05", (fn (x, b) => x + b, 0, alistEx5), 114)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test06", (fn (x, b) => x + b, 0, alistEx6), 318)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test07", (fn (x, b) => x + b, 0, alistEx7), 222)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test08", (fn (x, b) => x - b, 0, alistEx1), 0)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test09", (fn (x, b) => x - b, 0, alistEx2), 42)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test10", (fn (x, b) => x - b, 0, alistEx3), 1)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test11", (fn (x, b) => x - b, 0, alistEx4), 18)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test12", (fn (x, b) => x - b, 0, alistEx5), 38)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test13", (fn (x, b) => x - b, 0, alistEx6), 50)
+val _ = run_alistFoldl_test intEq ("alistFoldl_test14", (fn (x, b) => x - b, 0, alistEx7), 0)
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test15", (fn (x, b) => Int.toString x ^ b, "", alistEx1), "")
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test16", (fn (x, b) => Int.toString x ^ b, "", alistEx2), "42")
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test17", (fn (x, b) => Int.toString x ^ b, "", alistEx3), "2423")
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test18", (fn (x, b) => Int.toString x ^ b, "", alistEx4), "191817")
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test19", (fn (x, b) => Int.toString x ^ b, "", alistEx5), "373839")
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test20", (fn (x, b) => Int.toString x ^ b, "", alistEx6), "777879292827")
+val _ = run_alistFoldl_test stringEq ("alistFoldl_test21", (fn (x, b) => Int.toString x ^ b, "", alistEx7), "60615150")
