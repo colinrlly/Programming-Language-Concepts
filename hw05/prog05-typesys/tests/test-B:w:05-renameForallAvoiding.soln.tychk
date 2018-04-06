@@ -1,0 +1,2 @@
+f : (forall ('a) (forall ('b) (forall ('c) (forall ('d) (forall ('e) ('a 'b 'c 'd 'e -> int))))))
+f : (forall ('a 'b 'c 'd 'e 'f) ('e 'd 'c 'b 'a -> int))

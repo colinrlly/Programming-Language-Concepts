@@ -1,0 +1,1 @@
+type error: in val-rec, bogus is declared to have type (int -> bool) but has actual type (int -> int)

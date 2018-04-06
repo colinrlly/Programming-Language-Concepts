@@ -1,0 +1,103 @@
+<class XVector>
+<class ArrayXVector>
+<class ConcatXVector>
+<class RepeatXVector>
+<class ReverseXVector>
+<class SwizzleXVector>
+<class BlockXVector>
+<class Unit>
+<class BlockFn1>
+<class BlockFn2>
+<class BlockFn3>
+<class BlockFn4>
+<class XVectorTester>
+Testing xv01
+(sum xv01) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 358
+Testing xv02
+(sum xv02) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 359
+Testing xv03
+(sum xv03) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 360
+Testing xv04
+(sum xv04) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 361
+Testing xv05
+(sum xv05) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 362
+Testing xv06
+(sum xv06) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 363
+Testing xv07
+(sum xv07) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 364
+Testing xv08
+(sum xv08) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 365
+Testing xv09
+(sum xv09) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 366
+Testing xv10
+(sum xv10) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 367
+Testing xv11
+(sum xv11) => Method-stack traceback:
+  Sent 'error:' in standard input, line 70
+  Sent 'sum' in standard input, line 230
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in standard input, line 230
+  Sent 'test-sum' in standard input, line 368
+Testing xv12
+Testing xv13

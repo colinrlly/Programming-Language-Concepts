@@ -1,0 +1,296 @@
+<class XVector>
+<class ArrayXVector>
+<class ConcatXVector>
+<class RepeatXVector>
+<class ReverseXVector>
+<class SwizzleXVector>
+<class BlockXVector>
+<class Unit>
+<class BlockFn1>
+<class BlockFn2>
+<class BlockFn3>
+<class BlockFn4>
+<class XVectorTester>
+Testing cxv01
+(at:ifAbsent: cxv01 0 {nil}) => nil
+(at:ifAbsent: cxv01 1 {nil}) => nil
+(at:ifAbsent: cxv01 2 {nil}) => nil
+(at:ifAbsent: cxv01 3 {nil}) => nil
+(at:ifAbsent: cxv01 4 {nil}) => nil
+(at:ifAbsent: cxv01 5 {nil}) => nil
+(at:ifAbsent: cxv01 7 {nil}) => nil
+(at:ifAbsent: cxv01 8 {nil}) => nil
+(at:ifAbsent: cxv01 9 {nil}) => nil
+(at:ifAbsent: cxv01 1073741823 {nil}) => nil
+(at:ifAbsent: cxv01 1073741824 {nil}) => nil
+(at:ifAbsent: cxv01 1073741825 {nil}) => nil
+(at:ifAbsent: cxv01 -1073741825 {nil}) => nil
+(at:ifAbsent: cxv01 -1073741824 {nil}) => nil
+(at:ifAbsent: cxv01 -1073741823 {nil}) => nil
+(at:ifAbsent: cxv01 -9 {nil}) => nil
+(at:ifAbsent: cxv01 -8 {nil}) => nil
+(at:ifAbsent: cxv01 -7 {nil}) => nil
+(at:ifAbsent: cxv01 -5 {nil}) => nil
+(at:ifAbsent: cxv01 -4 {nil}) => nil
+(at:ifAbsent: cxv01 -3 {nil}) => nil
+(at:ifAbsent: cxv01 -2 {nil}) => nil
+(at:ifAbsent: cxv01 -1 {nil}) => nil
+Testing cxv01
+(print cxv01) => << >>
+(detect:ifNone: cxv01 negative) => nil
+(detect:ifNone: cxv01 nonnegative) => nil
+(detect:ifNone: cxv01 strictlyPositive) => nil
+Testing cxv01
+(sum cxv01) => 0
+Testing cxv01
+(product cxv01) => 1
+Testing cxv01
+Testing cxv01
+Testing cxv01
+(similar: cxv01 nil) => <False>
+(similar: cxv01 <True>) => <False>
+(similar: cxv01 <False>) => <False>
+(similar: cxv01 0) => <False>
+(similar: cxv01 1) => <False>
+(similar: cxv01 2) => <False>
+(similar: cxv01 42) => <False>
+(similar: cxv01 xv01) => <True>
+(similar: cxv01 xv02) => <False>
+(similar: cxv01 xv03) => <False>
+(similar: cxv01 xv04) => <False>
+(similar: cxv01 xv05) => <False>
+(similar: cxv01 xv06) => <False>
+(similar: cxv01 xv07) => <False>
+(similar: cxv01 xv08) => <False>
+(similar: cxv01 xv09) => <False>
+(similar: cxv01 xv10) => <False>
+(similar: cxv01 xv11) => <False>
+(similar: cxv01 xv12) => <False>
+(similar: cxv01 xv13) => <False>
+(similar: cxv01 cxv01) => <True>
+(similar: cxv01 cxv02) => <False>
+(similar: cxv01 cxv03) => <False>
+Testing cxv01
+(< cxv01 xv01) => <False>
+(< cxv01 xv02) => <True>
+(< cxv01 xv03) => <True>
+(< cxv01 xv04) => <True>
+(< cxv01 xv05) => <True>
+(< cxv01 xv06) => <True>
+(< cxv01 xv07) => <True>
+(< cxv01 xv08) => <True>
+(< cxv01 xv09) => <True>
+(< cxv01 xv10) => <True>
+(< cxv01 xv11) => <True>
+(< cxv01 cxv01) => <False>
+(< cxv01 cxv02) => <True>
+(< cxv01 cxv03) => <True>
+Testing cxv01
+Testing cxv02
+(at:ifAbsent: cxv02 0 {nil}) => 1
+(at:ifAbsent: cxv02 1 {nil}) => 2
+(at:ifAbsent: cxv02 2 {nil}) => 3
+(at:ifAbsent: cxv02 3 {nil}) => 4
+(at:ifAbsent: cxv02 4 {nil}) => 5
+(at:ifAbsent: cxv02 5 {nil}) => 6
+(at:ifAbsent: cxv02 7 {nil}) => -5
+(at:ifAbsent: cxv02 8 {nil}) => -4
+(at:ifAbsent: cxv02 9 {nil}) => -3
+(at:ifAbsent: cxv02 1073741823 {nil}) => nil
+(at:ifAbsent: cxv02 1073741824 {nil}) => nil
+(at:ifAbsent: cxv02 1073741825 {nil}) => nil
+(at:ifAbsent: cxv02 -1073741825 {nil}) => nil
+(at:ifAbsent: cxv02 -1073741824 {nil}) => nil
+(at:ifAbsent: cxv02 -1073741823 {nil}) => nil
+(at:ifAbsent: cxv02 -9 {nil}) => 4
+(at:ifAbsent: cxv02 -8 {nil}) => 5
+(at:ifAbsent: cxv02 -7 {nil}) => 6
+(at:ifAbsent: cxv02 -5 {nil}) => -5
+(at:ifAbsent: cxv02 -4 {nil}) => -4
+(at:ifAbsent: cxv02 -3 {nil}) => -3
+(at:ifAbsent: cxv02 -2 {nil}) => -2
+(at:ifAbsent: cxv02 -1 {nil}) => -1
+Testing cxv02
+(print cxv02) => << 1 2 3 4 5 6 -6 -5 -4 -3 -2 -1 >>
+(includes: cxv02 nil) => <False>
+(occurrencesOf: cxv02 nil) => 0
+(includes: cxv02 <True>) => <False>
+(occurrencesOf: cxv02 <True>) => 0
+(includes: cxv02 <False>) => <False>
+(occurrencesOf: cxv02 <False>) => 0
+(includes: cxv02 0) => <False>
+(occurrencesOf: cxv02 0) => 0
+(includes: cxv02 1) => <True>
+(occurrencesOf: cxv02 1) => 1
+(includes: cxv02 2) => <True>
+(occurrencesOf: cxv02 2) => 1
+(includes: cxv02 42) => <False>
+(occurrencesOf: cxv02 42) => 0
+(detect:ifNone: cxv02 negative) => -6
+(detect:ifNone: cxv02 nonnegative) => 1
+(detect:ifNone: cxv02 strictlyPositive) => 1
+Testing cxv02
+(sum cxv02) => 0
+Testing cxv02
+(product cxv02) => 518400
+Testing cxv02
+(min cxv02) => -6
+Testing cxv02
+(max cxv02) => 6
+Testing cxv02
+(similar: cxv02 nil) => <False>
+(similar: cxv02 <True>) => <False>
+(similar: cxv02 <False>) => <False>
+(similar: cxv02 0) => <False>
+(similar: cxv02 1) => <False>
+(similar: cxv02 2) => <False>
+(similar: cxv02 42) => <False>
+(similar: cxv02 xv01) => <False>
+(similar: cxv02 xv02) => <False>
+(similar: cxv02 xv03) => <False>
+(similar: cxv02 xv04) => <False>
+(similar: cxv02 xv05) => <False>
+(similar: cxv02 xv06) => <False>
+(similar: cxv02 xv07) => <False>
+(similar: cxv02 xv08) => <False>
+(similar: cxv02 xv09) => <False>
+(similar: cxv02 xv12) => <False>
+(similar: cxv02 xv13) => <False>
+(similar: cxv02 cxv01) => <False>
+(similar: cxv02 cxv02) => <True>
+(similar: cxv02 cxv03) => <False>
+Testing cxv02
+(< cxv02 xv01) => <False>
+(< cxv02 xv02) => <False>
+(< cxv02 xv03) => <False>
+(< cxv02 xv04) => <False>
+(< cxv02 xv05) => <False>
+(< cxv02 xv06) => <False>
+(< cxv02 xv07) => <False>
+(< cxv02 xv08) => <True>
+(< cxv02 xv09) => <True>
+(< cxv02 cxv01) => <False>
+(< cxv02 cxv02) => <False>
+(< cxv02 cxv03) => <False>
+Testing cxv02
+(fromIndex:toIndex: cxv02 0 0) => << 1 >>
+(fromIndex:toIndex: cxv02 0 1) => << 1 2 >>
+(fromIndex:toIndex: cxv02 0 2) => << 1 2 3 >>
+(fromIndex:toIndex: cxv02 0 4) => << 1 2 3 4 5 >>
+(fromIndex:toIndex: cxv02 1 1) => << 2 >>
+(fromIndex:toIndex: cxv02 1 3) => << 2 3 4 >>
+(fromIndex:toIndex: cxv02 -1 -1) => << -1 >>
+(fromIndex:toIndex: cxv02 -2 -1) => << -2 -1 >>
+(fromIndex:toIndex: cxv02 -3 -1) => << -3 -2 -1 >>
+(fromIndex:toIndex: cxv02 -5 -1) => << -5 -4 -3 -2 -1 >>
+(fromIndex:toIndex: cxv02 -2 -2) => << -2 >>
+(fromIndex:toIndex: cxv02 -4 -2) => << -4 -3 -2 >>
+(fromIndex:toIndex: cxv02 -1 0) => << -1 1 >>
+(fromIndex:toIndex: cxv02 -2 1) => << -2 -1 1 2 >>
+(fromIndex:toIndex: cxv02 -3 2) => << -3 -2 -1 1 2 3 >>
+(fromIndex:toIndex: cxv02 -4 3) => << -4 -3 -2 -1 1 2 3 4 >>
+(fromIndex:toIndex: cxv02 -5 4) => << -5 -4 -3 -2 -1 1 2 3 4 5 >>
+Testing cxv03
+(at:ifAbsent: cxv03 0 {nil}) => -6
+(at:ifAbsent: cxv03 1 {nil}) => -5
+(at:ifAbsent: cxv03 2 {nil}) => -4
+(at:ifAbsent: cxv03 3 {nil}) => 1
+(at:ifAbsent: cxv03 4 {nil}) => 2
+(at:ifAbsent: cxv03 5 {nil}) => 3
+(at:ifAbsent: cxv03 7 {nil}) => nil
+(at:ifAbsent: cxv03 8 {nil}) => nil
+(at:ifAbsent: cxv03 9 {nil}) => nil
+(at:ifAbsent: cxv03 1073741823 {nil}) => nil
+(at:ifAbsent: cxv03 1073741824 {nil}) => nil
+(at:ifAbsent: cxv03 1073741825 {nil}) => nil
+(at:ifAbsent: cxv03 -1073741825 {nil}) => nil
+(at:ifAbsent: cxv03 -1073741824 {nil}) => nil
+(at:ifAbsent: cxv03 -1073741823 {nil}) => nil
+(at:ifAbsent: cxv03 -9 {nil}) => nil
+(at:ifAbsent: cxv03 -8 {nil}) => nil
+(at:ifAbsent: cxv03 -7 {nil}) => nil
+(at:ifAbsent: cxv03 -5 {nil}) => -5
+(at:ifAbsent: cxv03 -4 {nil}) => -4
+(at:ifAbsent: cxv03 -3 {nil}) => 1
+(at:ifAbsent: cxv03 -2 {nil}) => 2
+(at:ifAbsent: cxv03 -1 {nil}) => 3
+Testing cxv03
+(print cxv03) => << -6 -5 -4 1 2 3 >>
+(includes: cxv03 nil) => <False>
+(occurrencesOf: cxv03 nil) => 0
+(includes: cxv03 <True>) => <False>
+(occurrencesOf: cxv03 <True>) => 0
+(includes: cxv03 <False>) => <False>
+(occurrencesOf: cxv03 <False>) => 0
+(includes: cxv03 0) => <False>
+(occurrencesOf: cxv03 0) => 0
+(includes: cxv03 1) => <True>
+(occurrencesOf: cxv03 1) => 1
+(includes: cxv03 2) => <True>
+(occurrencesOf: cxv03 2) => 1
+(includes: cxv03 42) => <False>
+(occurrencesOf: cxv03 42) => 0
+(detect:ifNone: cxv03 negative) => -6
+(detect:ifNone: cxv03 nonnegative) => 1
+(detect:ifNone: cxv03 strictlyPositive) => 1
+Testing cxv03
+(sum cxv03) => -9
+Testing cxv03
+(product cxv03) => -720
+Testing cxv03
+(min cxv03) => -6
+Testing cxv03
+(max cxv03) => 3
+Testing cxv03
+(similar: cxv03 nil) => <False>
+(similar: cxv03 <True>) => <False>
+(similar: cxv03 <False>) => <False>
+(similar: cxv03 0) => <False>
+(similar: cxv03 1) => <False>
+(similar: cxv03 2) => <False>
+(similar: cxv03 42) => <False>
+(similar: cxv03 xv01) => <False>
+(similar: cxv03 xv02) => <False>
+(similar: cxv03 xv03) => <False>
+(similar: cxv03 xv04) => <False>
+(similar: cxv03 xv05) => <False>
+(similar: cxv03 xv06) => <False>
+(similar: cxv03 xv07) => <False>
+(similar: cxv03 xv08) => <False>
+(similar: cxv03 xv09) => <False>
+(similar: cxv03 xv12) => <False>
+(similar: cxv03 xv13) => <False>
+(similar: cxv03 cxv01) => <False>
+(similar: cxv03 cxv02) => <False>
+(similar: cxv03 cxv03) => <True>
+Testing cxv03
+(< cxv03 xv01) => <False>
+(< cxv03 xv02) => <True>
+(< cxv03 xv03) => <True>
+(< cxv03 xv04) => <True>
+(< cxv03 xv05) => <False>
+(< cxv03 xv06) => <False>
+(< cxv03 xv07) => <False>
+(< cxv03 xv08) => <True>
+(< cxv03 xv09) => <True>
+(< cxv03 cxv01) => <False>
+(< cxv03 cxv02) => <True>
+(< cxv03 cxv03) => <False>
+Testing cxv03
+(fromIndex:toIndex: cxv03 0 0) => << -6 >>
+(fromIndex:toIndex: cxv03 0 1) => << -6 -5 >>
+(fromIndex:toIndex: cxv03 0 2) => << -6 -5 -4 >>
+(fromIndex:toIndex: cxv03 0 4) => << -6 -5 -4 1 2 >>
+(fromIndex:toIndex: cxv03 1 1) => << -5 >>
+(fromIndex:toIndex: cxv03 1 3) => << -5 -4 1 >>
+(fromIndex:toIndex: cxv03 -1 -1) => << 3 >>
+(fromIndex:toIndex: cxv03 -2 -1) => << 2 3 >>
+(fromIndex:toIndex: cxv03 -3 -1) => << 1 2 3 >>
+(fromIndex:toIndex: cxv03 -5 -1) => << -5 -4 1 2 3 >>
+(fromIndex:toIndex: cxv03 -2 -2) => << 2 >>
+(fromIndex:toIndex: cxv03 -4 -2) => << -4 1 2 >>
+(fromIndex:toIndex: cxv03 -1 0) => << 3 -6 >>
+(fromIndex:toIndex: cxv03 -2 1) => << 2 3 -6 -5 >>
+(fromIndex:toIndex: cxv03 -3 2) => << 1 2 3 -6 -5 -4 >>
+(fromIndex:toIndex: cxv03 -4 3) => << -4 1 >>
+(fromIndex:toIndex: cxv03 -5 4) => << -5 -4 1 2 >>

@@ -1,0 +1,29 @@
+amake
+test-A:a:01-amake PASS (soln.tychk == tychk)
+test-A:a:02-amake PASS (soln.tychk == tychk)
+test-A:a:03-amake PASS (soln.tychk == tychk)
+test-A:a:04-amake PASS (soln.tyerr; tyerr)
+test-A:a:05-amake PASS (soln.tychk == tychk)
+amake PASS
+asize
+test-A:b:01-asize PASS (soln.tychk == tychk)
+test-A:b:02-asize PASS (soln.tychk == tychk)
+test-A:b:03-asize PASS (soln.tychk == tychk)
+test-A:b:04-asize PASS (soln.tyerr; tyerr)
+asize PASS
+aat
+test-A:c:01-aat PASS (soln.tychk == tychk)
+test-A:c:02-aat PASS (soln.tychk == tychk)
+test-A:c:03-aat PASS (soln.tychk == tychk)
+test-A:c:04-aat PASS (soln.tyerr; tyerr)
+test-A:c:05-aat PASS (soln.tyerr; tyerr)
+aat PASS
+aput
+test-A:d:01-aput PASS (soln.tychk == tychk)
+test-A:d:02-aput PASS (soln.tychk == tychk)
+test-A:d:03-aput PASS (soln.tychk == tychk)
+test-A:d:04-aput PASS (soln.tyerr; tyerr)
+test-A:d:05-aput PASS (soln.tyerr; tyerr)
+test-A:d:06-aput PASS (soln.tyerr; tyerr)
+test-A:d:07-aput PASS (soln.tyerr; tyerr)
+aput PASS
