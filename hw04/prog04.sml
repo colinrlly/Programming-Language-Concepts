@@ -1,5 +1,5 @@
 (* 
- * Name: 
+ * Name: Colin Reilly
  * Time spent on assignment: 
  * Collaborators: 
  *)
@@ -56,8 +56,6 @@ fun zip ([],[]) = []
 (* DEFINE compound HERE *)
 fun compound x f 0 = x
     | compound x f n = compound (f x) f (n-1);
-
-val ans = compound(0, (fn x => x + 1), 10);
 
 (* **************************************** *)
 (* **************************************** *)
