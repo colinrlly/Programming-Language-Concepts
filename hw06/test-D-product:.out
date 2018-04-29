@@ -12,26 +12,24 @@
 <class BlockFn4>
 <class XVectorTester>
 Testing xv01
-(sum xv01) => 0
+(product xv01) => 1
 Testing xv02
-(sum xv02) => 1
+(product xv02) => 1
 Testing xv03
-(sum xv03) => 6
+(product xv03) => 6
 Testing xv04
-(sum xv04) => 21
+(product xv04) => 720
 Testing xv05
-(sum xv05) => -6
+(product xv05) => -6
 Testing xv06
-(sum xv06) => -15
+(product xv06) => -120
 Testing xv07
-(sum xv07) => -21
+(product xv07) => 720
 Testing xv08
-(sum xv08) => 120
 Testing xv09
-(sum xv09) => 186
 Testing xv10
-(sum xv10) => 29/20
+(product xv10) => 1/720
 Testing xv11
-(sum xv11) => 38363/630
+(product xv11) => 256/63
 Testing xv12
 Testing xv13

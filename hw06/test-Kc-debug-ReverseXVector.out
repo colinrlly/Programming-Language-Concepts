@@ -1,0 +1,75 @@
+<class XVector>
+<class ArrayXVector>
+<class ConcatXVector>
+<class RepeatXVector>
+<class ReverseXVector>
+<class SwizzleXVector>
+<class BlockXVector>
+<class Unit>
+<class BlockFn1>
+<class BlockFn2>
+<class BlockFn3>
+<class BlockFn4>
+<class XVectorTester>
+Method-stack traceback:
+  Sent 'error:' in predefined classes, line 107
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 6
+  Sent 'ifTrue:' in predefined classes, line 107
+  Sent 'timesRepeat:' in standard input, line 327
+  Sent 'withXV:' in standard input, line 323
+  Sent 'withXV:' in standard input, line 598
+Method-stack traceback:
+  Sent 'at:' in standard input, line 273
+  Sent 'elem:' in standard input, line 328
+  Sent 'value' in predefined classes, line 110
+  Sent 'value' in predefined classes, line 32
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 31
+  Sent 'whileTrue:' in predefined classes, line 35
+  Sent 'while' in predefined classes, line 109
+  Sent 'timesRepeat:' in standard input, line 327
+  Sent 'withXV:' in standard input, line 323
+  Sent 'withXV:' in standard input, line 602
+Method-stack traceback:
+  Sent 'at:' in standard input, line 273
+  Sent 'elem:' in standard input, line 328
+  Sent 'value' in predefined classes, line 110
+  Sent 'value' in predefined classes, line 32
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 31
+  Sent 'whileTrue:' in predefined classes, line 35
+  Sent 'while' in predefined classes, line 109
+  Sent 'timesRepeat:' in standard input, line 327
+  Sent 'withXV:' in standard input, line 323
+  Sent 'withXV:' in standard input, line 604
+Method-stack traceback:
+  Sent 'at:' in standard input, line 273
+  Sent 'elem:' in standard input, line 328
+  Sent 'value' in predefined classes, line 110
+  Sent 'value' in predefined classes, line 32
+  Sent 'value' in predefined classes, line 22
+  Sent 'ifTrue:ifFalse:' in predefined classes, line 31
+  Sent 'whileTrue:' in predefined classes, line 35
+  Sent 'while' in predefined classes, line 109
+  Sent 'timesRepeat:' in standard input, line 327
+  Sent 'withXV:' in standard input, line 323
+  Sent 'withXV:' in standard input, line 606
+Testing rxv01
+(debug rxv01) => Method-stack traceback:
+  Sent 'debug' in standard input, line 529
+  Sent 'test-debug' in standard input, line 607
+Testing rxv02
+(debug rxv02) => ReverseXVector(ArrayXVector(( 1 )))
+Testing rxv03
+(debug rxv03) => Method-stack traceback:
+  Sent 'debug' in standard input, line 529
+  Sent 'test-debug' in standard input, line 609
+Testing rxv04
+(debug rxv04) => Method-stack traceback:
+  Sent 'debug' in standard input, line 529
+  Sent 'test-debug' in standard input, line 610
+Testing rxv05
+(debug rxv05) => Method-stack traceback:
+  Sent 'debug' in standard input, line 529
+  Sent 'test-debug' in standard input, line 611

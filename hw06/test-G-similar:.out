@@ -1,0 +1,246 @@
+<class XVector>
+<class ArrayXVector>
+<class ConcatXVector>
+<class RepeatXVector>
+<class ReverseXVector>
+<class SwizzleXVector>
+<class BlockXVector>
+<class Unit>
+<class BlockFn1>
+<class BlockFn2>
+<class BlockFn3>
+<class BlockFn4>
+<class XVectorTester>
+Testing xv01
+(similar: xv01 nil) => <False>
+(similar: xv01 <True>) => <False>
+(similar: xv01 <False>) => <False>
+(similar: xv01 0) => <False>
+(similar: xv01 1) => <False>
+(similar: xv01 2) => <False>
+(similar: xv01 42) => <False>
+(similar: xv01 xv01) => <True>
+(similar: xv01 xv02) => <False>
+(similar: xv01 xv03) => <False>
+(similar: xv01 xv04) => <False>
+(similar: xv01 xv05) => <False>
+(similar: xv01 xv06) => <False>
+(similar: xv01 xv07) => <False>
+(similar: xv01 xv08) => <False>
+(similar: xv01 xv09) => <False>
+(similar: xv01 xv10) => <False>
+(similar: xv01 xv11) => <False>
+(similar: xv01 xv12) => <False>
+(similar: xv01 xv13) => <False>
+Testing xv02
+(similar: xv02 nil) => <False>
+(similar: xv02 <True>) => <False>
+(similar: xv02 <False>) => <False>
+(similar: xv02 0) => <False>
+(similar: xv02 1) => <False>
+(similar: xv02 2) => <False>
+(similar: xv02 42) => <False>
+(similar: xv02 xv01) => <False>
+(similar: xv02 xv02) => <True>
+(similar: xv02 xv03) => <False>
+(similar: xv02 xv04) => <False>
+(similar: xv02 xv05) => <False>
+(similar: xv02 xv06) => <False>
+(similar: xv02 xv07) => <False>
+(similar: xv02 xv08) => <False>
+(similar: xv02 xv09) => <False>
+(similar: xv02 xv12) => <False>
+(similar: xv02 xv13) => <False>
+Testing xv03
+(similar: xv03 nil) => <False>
+(similar: xv03 <True>) => <False>
+(similar: xv03 <False>) => <False>
+(similar: xv03 0) => <False>
+(similar: xv03 1) => <False>
+(similar: xv03 2) => <False>
+(similar: xv03 42) => <False>
+(similar: xv03 xv01) => <False>
+(similar: xv03 xv02) => <False>
+(similar: xv03 xv03) => <True>
+(similar: xv03 xv04) => <False>
+(similar: xv03 xv05) => <False>
+(similar: xv03 xv06) => <False>
+(similar: xv03 xv07) => <False>
+(similar: xv03 xv08) => <False>
+(similar: xv03 xv09) => <False>
+(similar: xv03 xv12) => <False>
+(similar: xv03 xv13) => <False>
+Testing xv04
+(similar: xv04 nil) => <False>
+(similar: xv04 <True>) => <False>
+(similar: xv04 <False>) => <False>
+(similar: xv04 0) => <False>
+(similar: xv04 1) => <False>
+(similar: xv04 2) => <False>
+(similar: xv04 42) => <False>
+(similar: xv04 xv01) => <False>
+(similar: xv04 xv02) => <False>
+(similar: xv04 xv03) => <False>
+(similar: xv04 xv04) => <True>
+(similar: xv04 xv05) => <False>
+(similar: xv04 xv06) => <False>
+(similar: xv04 xv07) => <False>
+(similar: xv04 xv08) => <False>
+(similar: xv04 xv09) => <False>
+(similar: xv04 xv12) => <False>
+(similar: xv04 xv13) => <False>
+Testing xv05
+(similar: xv05 nil) => <False>
+(similar: xv05 <True>) => <False>
+(similar: xv05 <False>) => <False>
+(similar: xv05 0) => <False>
+(similar: xv05 1) => <False>
+(similar: xv05 2) => <False>
+(similar: xv05 42) => <False>
+(similar: xv05 xv01) => <False>
+(similar: xv05 xv02) => <False>
+(similar: xv05 xv03) => <False>
+(similar: xv05 xv04) => <False>
+(similar: xv05 xv05) => <True>
+(similar: xv05 xv06) => <False>
+(similar: xv05 xv07) => <False>
+(similar: xv05 xv08) => <False>
+(similar: xv05 xv09) => <False>
+(similar: xv05 xv12) => <False>
+(similar: xv05 xv13) => <False>
+Testing xv06
+(similar: xv06 nil) => <False>
+(similar: xv06 <True>) => <False>
+(similar: xv06 <False>) => <False>
+(similar: xv06 0) => <False>
+(similar: xv06 1) => <False>
+(similar: xv06 2) => <False>
+(similar: xv06 42) => <False>
+(similar: xv06 xv01) => <False>
+(similar: xv06 xv02) => <False>
+(similar: xv06 xv03) => <False>
+(similar: xv06 xv04) => <False>
+(similar: xv06 xv05) => <False>
+(similar: xv06 xv06) => <True>
+(similar: xv06 xv07) => <False>
+(similar: xv06 xv08) => <False>
+(similar: xv06 xv09) => <False>
+(similar: xv06 xv12) => <False>
+(similar: xv06 xv13) => <False>
+Testing xv07
+(similar: xv07 nil) => <False>
+(similar: xv07 <True>) => <False>
+(similar: xv07 <False>) => <False>
+(similar: xv07 0) => <False>
+(similar: xv07 1) => <False>
+(similar: xv07 2) => <False>
+(similar: xv07 42) => <False>
+(similar: xv07 xv01) => <False>
+(similar: xv07 xv02) => <False>
+(similar: xv07 xv03) => <False>
+(similar: xv07 xv04) => <False>
+(similar: xv07 xv05) => <False>
+(similar: xv07 xv06) => <False>
+(similar: xv07 xv07) => <True>
+(similar: xv07 xv08) => <False>
+(similar: xv07 xv09) => <False>
+(similar: xv07 xv12) => <False>
+(similar: xv07 xv13) => <False>
+Testing xv08
+(similar: xv08 nil) => <False>
+(similar: xv08 <True>) => <False>
+(similar: xv08 <False>) => <False>
+(similar: xv08 0) => <False>
+(similar: xv08 1) => <False>
+(similar: xv08 2) => <False>
+(similar: xv08 42) => <False>
+(similar: xv08 xv01) => <False>
+(similar: xv08 xv02) => <False>
+(similar: xv08 xv03) => <False>
+(similar: xv08 xv04) => <False>
+(similar: xv08 xv05) => <False>
+(similar: xv08 xv06) => <False>
+(similar: xv08 xv07) => <False>
+(similar: xv08 xv08) => <True>
+(similar: xv08 xv09) => <False>
+(similar: xv08 xv12) => <False>
+(similar: xv08 xv13) => <False>
+Testing xv09
+(similar: xv09 nil) => <False>
+(similar: xv09 <True>) => <False>
+(similar: xv09 <False>) => <False>
+(similar: xv09 0) => <False>
+(similar: xv09 1) => <False>
+(similar: xv09 2) => <False>
+(similar: xv09 42) => <False>
+(similar: xv09 xv01) => <False>
+(similar: xv09 xv02) => <False>
+(similar: xv09 xv03) => <False>
+(similar: xv09 xv04) => <False>
+(similar: xv09 xv05) => <False>
+(similar: xv09 xv06) => <False>
+(similar: xv09 xv07) => <False>
+(similar: xv09 xv08) => <False>
+(similar: xv09 xv09) => <True>
+(similar: xv09 xv12) => <False>
+(similar: xv09 xv13) => <False>
+Testing xv10
+(similar: xv10 nil) => <False>
+(similar: xv10 <True>) => <False>
+(similar: xv10 <False>) => <False>
+(similar: xv10 0) => <False>
+(similar: xv10 1) => <False>
+(similar: xv10 2) => <False>
+(similar: xv10 42) => <False>
+(similar: xv10 xv01) => <False>
+(similar: xv10 xv10) => <True>
+(similar: xv10 xv11) => <False>
+Testing xv11
+(similar: xv11 nil) => <False>
+(similar: xv11 <True>) => <False>
+(similar: xv11 <False>) => <False>
+(similar: xv11 0) => <False>
+(similar: xv11 1) => <False>
+(similar: xv11 2) => <False>
+(similar: xv11 42) => <False>
+(similar: xv11 xv01) => <False>
+(similar: xv11 xv10) => <False>
+(similar: xv11 xv11) => <True>
+Testing xv12
+(similar: xv12 nil) => <False>
+(similar: xv12 <True>) => <False>
+(similar: xv12 <False>) => <False>
+(similar: xv12 0) => <False>
+(similar: xv12 1) => <False>
+(similar: xv12 2) => <False>
+(similar: xv12 42) => <False>
+(similar: xv12 xv01) => <False>
+(similar: xv12 xv02) => <False>
+(similar: xv12 xv03) => <False>
+(similar: xv12 xv04) => <False>
+(similar: xv12 xv05) => <False>
+(similar: xv12 xv06) => <False>
+(similar: xv12 xv07) => <False>
+(similar: xv12 xv08) => <False>
+(similar: xv12 xv09) => <False>
+(similar: xv12 xv12) => <True>
+(similar: xv12 xv13) => <False>
+Testing xv13
+(similar: xv13 nil) => <False>
+(similar: xv13 <True>) => <False>
+(similar: xv13 <False>) => <False>
+(similar: xv13 0) => <False>
+(similar: xv13 1) => <False>
+(similar: xv13 2) => <False>
+(similar: xv13 42) => <False>
+(similar: xv13 xv01) => <False>
+(similar: xv13 xv02) => <False>
+(similar: xv13 xv03) => <False>
+(similar: xv13 xv04) => <False>
+(similar: xv13 xv05) => <False>
+(similar: xv13 xv06) => <False>
+(similar: xv13 xv07) => <False>
+(similar: xv13 xv08) => <False>
+(similar: xv13 xv09) => <False>
+(similar: xv13 xv12) => <False>
+(similar: xv13 xv13) => <True>
